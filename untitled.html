@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>onlywebpro.com</title>
+</head>
+<body>
+  
+  <img src="bird1.jpg" id="imgLogo" class="logo">
+ 
+<script type="text/javascript">
+if (window.DeviceOrientationEvent) {
+  console.log("DeviceOrientation is supported");
+  window.addEventListener('deviceorientation', function(eventData) {
+        var LR = eventData.gamma;
+        var FB = eventData.beta;
+        var DIR = eventData.alpha;
+        deviceOrientationHandler(LR, FB, DIR);
+        }, false);
+} else {
+        alert("Not supported on your device or browser.  Sorry.");
+}
+ 
+function deviceOrientationHandler(LR, FB, DIR) {
+   //for webkit browser
+   document.getElementById("imgLogo").style.webkitTransform = "rotate("+ LR +"deg) rotate3d(1,0,0, "+ (FB*-1)+"deg)";
+   console.log(LR);
+ 
+   //for HTML5 standard-compliance
+   document.getElementById("imgLogo").style.transform = "rotate("+ LR +"deg) rotate3d(1,0,0, "+ (FB*-1)+"deg)";
+}
+</script>
+ 
+</body>
+</html>
