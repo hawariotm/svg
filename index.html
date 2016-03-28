@@ -25,11 +25,11 @@ if (window.DeviceOrientationEvent) {
  
 function deviceOrientationHandler(LR, FB, DIR) {
    //for webkit browser
-   document.getElementById("imgLogo").style.webkitTransform = "rotateZ("+ LR +"deg)";
- 
+   document.getElementById("imgLogo").style.webkitTransform = "rotateZ("+ DIR +"deg)";
+ document.getElementById("imgLogo").style.webkitTransformOrigin = "0 0";
    //for HTML5 standard-compliance
    document.getElementById("imgLogo").style.transformOrigin = "0 0";
-   document.getElementById("imgLogo").style.transform = "rotateZ("+ LR +"deg)";
+   document.getElementById("imgLogo").style.transform = "rotateZ("+ DIR +"deg)";
 
    document.querySelector('.error').innerText = LR;
 }
