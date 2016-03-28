@@ -1,0 +1,8 @@
+.svg{
+	position: absolute;
+}
+.innerRect
+{
+	transform-origin: 50% 50%
+	
+}
