@@ -7,6 +7,8 @@
 <body>
   
   <img src="bird1.jpg" id="imgLogo" class="logo">
+
+  <div class="error"></div>
  
 <script type="text/javascript">
 if (window.DeviceOrientationEvent) {
@@ -23,11 +25,11 @@ if (window.DeviceOrientationEvent) {
  
 function deviceOrientationHandler(LR, FB, DIR) {
    //for webkit browser
-   document.getElementById("imgLogo").style.webkitTransform = "rotateZ("+ LR +"deg) rotate3d(1,0,0, "+ (FB*-1)+"deg)";
-   console.log(LR);
+   document.getElementById("imgLogo").style.webkitTransform = "rotateZ("+ LR +"deg)";
  
    //for HTML5 standard-compliance
-   document.getElementById("imgLogo").style.transform = "rotateZ("+ LR +"deg) rotate3d(1,0,0, "+ (FB*-1)+"deg)";
+   document.getElementById("imgLogo").style.transform = "rotateZ("+ LR +"deg)";
+   document.querySelector('.error').innerText = LR;
 }
 </script>
  
