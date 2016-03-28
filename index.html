@@ -19,7 +19,7 @@ if (window.DeviceOrientationEvent) {
         var DIR = eventData.alpha;
         deviceOrientationHandler(LR, FB, DIR);
         }, false);
-} else {
+} else {.
         alert("Not supported on your device or browser.  Sorry.");
 }
  
@@ -28,7 +28,9 @@ function deviceOrientationHandler(LR, FB, DIR) {
    document.getElementById("imgLogo").style.webkitTransform = "rotateZ("+ LR +"deg)";
  
    //for HTML5 standard-compliance
+   document.getElementById("imgLogo").style.transformOrigin = "0 0";
    document.getElementById("imgLogo").style.transform = "rotateZ("+ LR +"deg)";
+
    document.querySelector('.error').innerText = LR;
 }
 </script>
