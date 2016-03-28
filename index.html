@@ -23,7 +23,7 @@ if (window.DeviceOrientationEvent) {
  
 function deviceOrientationHandler(LR, FB, DIR) {
    //for webkit browser
-   document.getElementById("imgLogo").style.webkitTransform = "rotateZ("+ LR +"deg)";
+   document.getElementById("imgLogo").style.webkitTransform = "rotate("+ LR +"deg)";
    console.log(LR);
  
    //for HTML5 standard-compliance
